@@ -8,20 +8,56 @@
     <link href="https://volodymyrkushnir.com/assets/stylesheets/base.css" rel="stylesheet">
     <title>DTr &mdash; Résumé</title>
     <link href="https://twitter.com/realDonaldTrump" rel="me" type="text/html">
+    <style>
+        article {
+            margin-top: 120px;
+        }
+
+        .page {
+            border-radius: 30px;
+        }
+
+        .avatar-wrapper img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .avatar:first-child {
+            display: block;
+        }
+
+        .avatar:last-child {
+            display: none;
+        }
+
+        .details .timeline li {
+            background-color: #f7f7f7;
+            border-radius: 6px;
+            padding: 10px 0 10px 15px;
+            margin: 5px;
+        }
+
+        .details .timeline li:hover {
+            background-color: #d0d0d0;
+        }
+    </style>
 </head>
 <body>
 <main>
     <article>
-        <div class="page" style="border-color: midnightblue;">
+        <div class="page">
             <div class="stackable grid">
                 <div class="row">
-                    <div class="three wide center aligned column">
+                    <div class="five wide center aligned column">
                         <div class="avatar-wrapper">
                             <img alt="Donald Trump photo" class="avatar"
-                                 src="https://n1s1.elle.ru/44/ed/dd/44eddd4a06b3f82b6275c9e809001b51/620x814_1_82668687a9960e84b6dbb93a9c57af74@940x1234_0xc0a839a4_13841664381478684571.jpeg">
+                                 src="https://n1s1.elle.ru/44/ed/dd/44eddd4a06b3f82b6275c9e809001b51/620x814_1_82668687a9960e84b6dbb93a9c57af74@940x1234_0xc0a839a4_13841664381478684571.jpeg"/>
+                            <img alt="Donald Trump photo" class="avatar"
+                                 src="https://www.meme-arsenal.com/memes/9b83a83ce3f3a0e99e8edad023faf373.jpg"/>
                         </div>
                     </div>
-                    <div class="thirteen wide column">
+                    <div class="ten wide column">
                         <div class="stackable grid">
                             <div class="sixteen wide column">
                                 <h1 class="name">DONALD TRUMP</h1>
@@ -283,7 +319,7 @@
                             <li class="details">
                                 <input type="checkbox">
                                 <label class="summary" for="other"><h6>BEST CAREER IN ALL WORLD</h6></label>
-                                <div>
+                                <div class="timeline">
                                     <ul>
                                         <li>
                                             <span class="italicText">Crippled America: How to Make America Great Again</span>
@@ -343,7 +379,7 @@
                             <li class="details">
                                 <input type="checkbox">
                                 <label class="summary" for="other"><h6>Please do not open! It is private</h6></label>
-                                <div>
+                                <div class="timeline">
                                     <ul>
                                         <li>
                                             <p class="boldText">2006</p>
@@ -462,5 +498,17 @@
         </div>
     </article>
 </main>
+<script>
+    function changeImage() {
+        setTimeout(() => {
+            let avatars = document.getElementsByClassName('avatar');
+            avatars[0].style.display == 'none' ? avatars[0].style.display = 'block' : avatars[0].style.display = 'none';
+            avatars[1].style.display == 'block' ? avatars[1].style.display = 'none' : avatars[1].style.display = 'block';
+            changeImage();
+        }, 2000);
+    }
+
+    changeImage();
+</script>
 </body>
 </html>
